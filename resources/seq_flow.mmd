@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant M as Main
+    participant G as Game
+    participant S as Snake
+    participant F as Food
+
+    M->>G: Create game instance
+    G->>G: Initialize score and high score
+    G->>S: Create snake instance
+    G->>F: Create food instance
+    G->>G: Start game
+    G->>S: Move snake
+    S->>S: Check collision
+    S->>S: Change direction
+    S->>S: Eat food
+    G->>F: Generate new food
+    G->>G: Update score
+    G->>G: Draw score
+    S->>S: Draw snake
+    G->>G: End game
+    G->>G: Restart game

@@ -1,0 +1,34 @@
+classDiagram
+    class Game {
+        -int score
+        -int high_score
+        -Snake snake
+        -Food food
+        +__init__()
+        +start_game()
+        +end_game()
+        +restart_game()
+        +update_score()
+        +draw_score()
+    }
+
+    class Snake {
+        -List[Tuple[int, int]] body
+        -Tuple[int, int] direction
+        +__init__()
+        +move()
+        +change_direction()
+        +eat_food()
+        +check_collision()
+        +draw()
+    }
+
+    class Food {
+        -Tuple[int, int] position
+        +__init__()
+        +generate()
+        +draw()
+    }
+
+    Game "1" -- "1" Snake: has
+    Game "1" -- "1" Food: has
